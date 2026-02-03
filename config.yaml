@@ -1,0 +1,31 @@
+collection: 2601_politic_yt_kanaly
+
+
+workers: 1        
+limit: 50
+
+behaviors:
+  - siteSpecific     # FB/IG/Twitter — specializované chování (scroll, otevření příspěvků, načítání feedu)
+  - autoscroll       # fallback pro stránky bez siteSpecific
+  - autoplay         # pro video prvky
+  - autofetch        # extra síťové requesty (např. načítání komentářů apod.)
+
+scopeType: page      # drží crawler na jedné FB/IG/TW stránce/profilu
+depth: 0             # siteSpecific udělá vlastní navigaci, nepotřebujeme depth > 0
+extraHops: 0         # neskákat na další domény
+
+saveState: always
+generateCdx: true
+
+
+retries: 3
+timelimit: 300
+
+warcinfo:
+  operator: "email zatopek"
+
+
+profiles:
+  - name: sm
+    file: /profiles/profile4.tar.gz
+
